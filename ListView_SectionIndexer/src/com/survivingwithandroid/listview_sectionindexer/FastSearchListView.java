@@ -118,10 +118,12 @@ public class FastSearchListView extends ListView {
 			else {
 				float y = event.getY();
 				int currentPosition = (int) Math.floor(y / indexSize);
-				section = sections[currentPosition];
-				this.setSelection(((SectionIndexer) getAdapter())
-						.getPositionForSection(currentPosition));
+				if(currentPosition >= 0){
+					section = sections[currentPosition];
+					this.setSelection(((SectionIndexer) getAdapter())
+							.getPositionForSection(currentPosition));
 
+				}
 			}
 			break;
 
